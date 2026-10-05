@@ -1,0 +1,421 @@
+/* Smart Parking Auto-meta - Red Gradient Design System */
+@import url('https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&family=JetBrains+Mono:wght@400;600;700&family=Orbitron:wght@500;700;900&display=swap');
+
+:root {
+  /* Color Palette - Dark Mode Default */
+  --bg-primary: #0a0c10;
+  --bg-secondary: #12161f;
+  --bg-card: rgba(22, 27, 34, 0.85);
+  --bg-card-hover: rgba(30, 38, 48, 0.95);
+  --border-color: rgba(239, 68, 68, 0.2);
+  --border-subtle: rgba(255, 255, 255, 0.08);
+  
+  --text-primary: #f8fafc;
+  --text-secondary: #94a3b8;
+  --text-muted: #64748b;
+  
+  /* Red Gradient Accent Palette */
+  --accent-red-start: #ff334b;
+  --accent-red-end: #b91c1c;
+  --accent-glow: rgba(239, 68, 68, 0.35);
+  
+  --grad-red: linear-gradient(135deg, #ff334b 0%, #dc2626 50%, #991b1b 100%);
+  --grad-red-subtle: linear-gradient(135deg, rgba(239, 68, 68, 0.15) 0%, rgba(185, 28, 28, 0.05) 100%);
+  --grad-card: linear-gradient(145deg, rgba(26, 32, 44, 0.7) 0%, rgba(18, 22, 31, 0.9) 100%);
+  
+  /* Status Colors */
+  --color-available: #10b981;
+  --color-available-glow: rgba(16, 185, 129, 0.3);
+  --color-occupied: #ef4444;
+  --color-occupied-glow: rgba(239, 68, 68, 0.3);
+  --color-reserved: #f59e0b;
+  --color-reserved-glow: rgba(245, 158, 11, 0.3);
+  
+  /* LCD Colors */
+  --lcd-bg: #002b36;
+  --lcd-text: #2aa198;
+  --lcd-glow: rgba(42, 161, 152, 0.6);
+
+  --shadow-sm: 0 2px 8px rgba(0, 0, 0, 0.4);
+  --shadow-md: 0 8px 24px rgba(0, 0, 0, 0.5);
+  --shadow-lg: 0 16px 40px rgba(0, 0, 0, 0.6);
+  --shadow-glow: 0 0 25px var(--accent-glow);
+}
+
+/* Light Mode Overrides */
+[data-theme="light"] {
+  --bg-primary: #f8fafc;
+  --bg-secondary: #f1f5f9;
+  --bg-card: rgba(255, 255, 255, 0.9);
+  --bg-card-hover: #ffffff;
+  --border-color: rgba(220, 38, 38, 0.25);
+  --border-subtle: rgba(0, 0, 0, 0.08);
+  
+  --text-primary: #0f172a;
+  --text-secondary: #475569;
+  --text-muted: #94a3b8;
+  
+  --grad-red: linear-gradient(135deg, #ef4444 0%, #dc2626 50%, #b91c1c 100%);
+  --grad-red-subtle: linear-gradient(135deg, rgba(239, 68, 68, 0.1) 0%, rgba(220, 38, 38, 0.03) 100%);
+  --grad-card: linear-gradient(145deg, #ffffff 0%, #f8fafc 100%);
+  
+  --shadow-sm: 0 2px 8px rgba(0, 0, 0, 0.06);
+  --shadow-md: 0 8px 24px rgba(0, 0, 0, 0.08);
+  --shadow-lg: 0 16px 40px rgba(220, 38, 38, 0.1);
+  --shadow-glow: 0 0 20px rgba(239, 68, 68, 0.2);
+  
+  --lcd-bg: #032b1a;
+  --lcd-text: #4ade80;
+  --lcd-glow: rgba(74, 222, 128, 0.5);
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: 'Plus Jakarta Sans', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+  background-color: var(--bg-primary);
+  color: var(--text-primary);
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  overflow-x: hidden;
+  transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+/* Red Gradient Utility */
+.bg-red-gradient {
+  background: var(--grad-red);
+}
+
+.text-red-gradient {
+  background: var(--grad-red);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+.border-red-glow {
+  border: 1px solid var(--border-color);
+  box-shadow: var(--shadow-glow);
+}
+
+/* Glassmorphism Card */
+.glass-card {
+  background: var(--grad-card);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  border: 1px solid var(--border-subtle);
+  border-radius: 16px;
+  box-shadow: var(--shadow-md);
+  transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.glass-card:hover {
+  border-color: var(--border-color);
+  transform: translateY(-2px);
+}
+
+/* Button Styles */
+.btn-red {
+  background: var(--grad-red);
+  color: #ffffff;
+  font-weight: 600;
+  border-radius: 12px;
+  padding: 10px 20px;
+  border: none;
+  cursor: pointer;
+  box-shadow: 0 4px 15px rgba(220, 38, 38, 0.35);
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  transition: all 0.25s ease;
+  text-decoration: none;
+}
+
+.btn-red:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 6px 20px rgba(220, 38, 38, 0.5);
+  filter: brightness(1.1);
+}
+
+.btn-red:active {
+  transform: translateY(0);
+}
+
+.btn-outline-red {
+  background: transparent;
+  color: #ef4444;
+  border: 1.5px solid #ef4444;
+  border-radius: 12px;
+  padding: 8px 16px;
+  font-weight: 600;
+  cursor: pointer;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  transition: all 0.2s ease;
+  text-decoration: none;
+}
+
+.btn-outline-red:hover {
+  background: rgba(239, 68, 68, 0.1);
+  transform: translateY(-1px);
+}
+
+/* Nav Tabs */
+.nav-tab {
+  padding: 8px 16px;
+  border-radius: 10px;
+  font-weight: 600;
+  font-size: 0.9rem;
+  color: var(--text-secondary);
+  background: transparent;
+  border: 1px solid transparent;
+  cursor: pointer;
+  transition: all 0.2s ease;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.nav-tab:hover {
+  color: var(--text-primary);
+  background: var(--bg-card-hover);
+}
+
+.nav-tab.active {
+  color: #ffffff;
+  background: var(--grad-red);
+  border-color: rgba(255, 255, 255, 0.2);
+  box-shadow: 0 4px 12px rgba(220, 38, 38, 0.35);
+}
+
+/* Slot Card Badges & Animations */
+.slot-badge-available {
+  background: rgba(16, 185, 129, 0.15);
+  color: #10b981;
+  border: 1px solid rgba(16, 185, 129, 0.3);
+}
+
+.slot-badge-occupied {
+  background: rgba(239, 68, 68, 0.15);
+  color: #ef4444;
+  border: 1px solid rgba(239, 68, 68, 0.3);
+}
+
+.slot-badge-reserved {
+  background: rgba(245, 158, 11, 0.15);
+  color: #f59e0b;
+  border: 1px solid rgba(245, 158, 11, 0.3);
+}
+
+/* Parking Slot Grid Box */
+.parking-slot-card {
+  position: relative;
+  background: var(--bg-card);
+  border-radius: 14px;
+  border: 2px dashed var(--border-subtle);
+  padding: 16px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  cursor: pointer;
+  transition: all 0.25s ease;
+  user-select: none;
+}
+
+.parking-slot-card.status-available {
+  border-color: var(--color-available);
+  background: linear-gradient(145deg, rgba(16, 185, 129, 0.08), rgba(16, 185, 129, 0.02));
+}
+
+.parking-slot-card.status-available:hover {
+  border-color: #34d399;
+  transform: translateY(-3px);
+  box-shadow: 0 6px 20px var(--color-available-glow);
+}
+
+.parking-slot-card.status-occupied {
+  border-color: var(--color-occupied);
+  background: linear-gradient(145deg, rgba(239, 68, 68, 0.12), rgba(239, 68, 68, 0.04));
+  border-style: solid;
+}
+
+.parking-slot-card.status-reserved {
+  border-color: var(--color-reserved);
+  background: linear-gradient(145deg, rgba(245, 158, 11, 0.12), rgba(245, 158, 11, 0.04));
+  border-style: dashed;
+}
+
+/* 16x2 LCD Simulation Display */
+.lcd-container {
+  background: #02120e;
+  border: 6px solid #1e293b;
+  border-radius: 8px;
+  padding: 14px 18px;
+  box-shadow: inset 0 0 15px rgba(0, 0, 0, 0.9), 0 4px 16px rgba(0, 0, 0, 0.4);
+  font-family: 'Courier New', 'JetBrains Mono', monospace;
+  color: #38ef7d;
+  text-shadow: 0 0 6px rgba(56, 239, 125, 0.85);
+  width: 100%;
+  max-width: 380px;
+}
+
+.lcd-line {
+  font-size: 1.15rem;
+  font-weight: 700;
+  letter-spacing: 2px;
+  white-space: pre;
+  overflow: hidden;
+  height: 28px;
+  line-height: 28px;
+}
+
+/* Barrier Gate Simulation */
+.gate-sim-box {
+  position: relative;
+  height: 140px;
+  background: var(--bg-card);
+  border: 1px solid var(--border-subtle);
+  border-radius: 16px;
+  overflow: hidden;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.barrier-stand {
+  position: absolute;
+  left: 25%;
+  bottom: 20px;
+  width: 28px;
+  height: 60px;
+  background: #475569;
+  border-radius: 4px;
+  border-top: 6px solid #ef4444;
+  z-index: 2;
+}
+
+.barrier-pivot {
+  position: absolute;
+  top: 10px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 14px;
+  height: 14px;
+  border-radius: 50%;
+  background: #f8fafc;
+  z-index: 3;
+}
+
+.barrier-arm {
+  position: absolute;
+  top: 14px;
+  left: 14px;
+  width: 170px;
+  height: 10px;
+  background: repeating-linear-gradient(
+    45deg,
+    #ef4444,
+    #ef4444 12px,
+    #ffffff 12px,
+    #ffffff 24px
+  );
+  border-radius: 4px;
+  transform-origin: left center;
+  transition: transform 0.8s cubic-bezier(0.34, 1.56, 0.64, 1);
+  box-shadow: 0 2px 8px rgba(0,0,0,0.3);
+  z-index: 2;
+}
+
+.barrier-arm.open {
+  transform: rotate(-75deg);
+}
+
+.barrier-arm.closed {
+  transform: rotate(0deg);
+}
+
+/* Pulsing radar effect */
+@keyframes radarPulse {
+  0% {
+    transform: scale(0.95);
+    opacity: 0.8;
+  }
+  50% {
+    transform: scale(1.05);
+    opacity: 0.4;
+  }
+  100% {
+    transform: scale(0.95);
+    opacity: 0.8;
+  }
+}
+
+.pulse-radar {
+  animation: radarPulse 2s infinite ease-in-out;
+}
+
+/* Modal Backdrop */
+.modal-backdrop {
+  position: fixed;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.7);
+  backdrop-filter: blur(6px);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 999;
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity 0.25s ease;
+  padding: 16px;
+}
+
+.modal-backdrop.open {
+  opacity: 1;
+  pointer-events: auto;
+}
+
+.modal-box {
+  background: var(--bg-primary);
+  border: 1px solid var(--border-color);
+  border-radius: 20px;
+  box-shadow: var(--shadow-lg), var(--shadow-glow);
+  width: 100%;
+  max-width: 520px;
+  max-height: 90vh;
+  overflow-y: auto;
+  transform: scale(0.95);
+  transition: transform 0.25s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.modal-backdrop.open .modal-box {
+  transform: scale(1);
+}
+
+/* Custom Scrollbar */
+::-webkit-scrollbar {
+  width: 8px;
+  height: 8px;
+}
+
+::-webkit-scrollbar-track {
+  background: var(--bg-primary);
+}
+
+::-webkit-scrollbar-thumb {
+  background: var(--text-muted);
+  border-radius: 4px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: #ef4444;
+}

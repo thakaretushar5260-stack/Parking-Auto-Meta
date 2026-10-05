@@ -1,0 +1,331 @@
+{
+  "users": [
+    {
+      "id": "USR-001",
+      "rfidId": "83A14F9B",
+      "name": "Vaibhav",
+      "email": "vaibhav@sbjain.edu.in",
+      "vehicleNo": "MH-31-EQ-4092",
+      "contact": "+91 98230 11223",
+      "createdAt": "2026-10-01T10:00:00.000Z"
+    },
+    {
+      "id": "USR-002",
+      "rfidId": "44C27D1A",
+      "name": "Ankita",
+      "email": "ankita@sbjain.edu.in",
+      "vehicleNo": "MH-40-AZ-1845",
+      "contact": "+91 97654 33211",
+      "createdAt": "2026-10-02T11:30:00.000Z"
+    },
+    {
+      "id": "USR-003",
+      "rfidId": "62F91B8C",
+      "name": "Om",
+      "email": "om@sbjain.edu.in",
+      "vehicleNo": "MH-31-BY-9012",
+      "contact": "+91 94221 88765",
+      "createdAt": "2026-10-03T09:15:00.000Z"
+    },
+    {
+      "id": "USR-004",
+      "rfidId": "99E45A22",
+      "name": "Pratik",
+      "email": "pratik@sbjain.edu.in",
+      "vehicleNo": "MH-31-CX-5567",
+      "contact": "+91 98812 44332",
+      "createdAt": "2026-10-04T14:45:00.000Z"
+    },
+    {
+      "id": "USR-4290",
+      "rfidId": "83AFIA38",
+      "name": "Tushar Thakare",
+      "email": "tushar@gmail.com",
+      "vehicleNo": "MH-31-EQ-4936",
+      "contact": "7788995544",
+      "createdAt": "2026-10-05T08:12:54.290Z"
+    }
+  ],
+  "parkingStations": [
+    {
+      "id": "STN-SBJAIN",
+      "name": "S.B. Jain Institute Parking Terminal",
+      "address": "Near Katol Road, Fetri, Nagpur, Maharashtra 441501",
+      "latitude": 21.2335,
+      "longitude": 78.9667,
+      "totalSlots": 6
+    },
+    {
+      "id": "STN-KATOLRD",
+      "name": "Katol Road Smart Parking Hub",
+      "address": "Katol Road, Gittikhadan Square, Nagpur, Maharashtra 440013",
+      "latitude": 21.182,
+      "longitude": 79.035,
+      "totalSlots": 6
+    },
+    {
+      "id": "STN-SITABULDI",
+      "name": "Sitabuldi Metro Multi-Level Parking",
+      "address": "Sitabuldi Interchange, Nagpur, Maharashtra 440012",
+      "latitude": 21.1458,
+      "longitude": 79.0882,
+      "totalSlots": 6
+    }
+  ],
+  "slots": [
+    {
+      "slotId": "SLOT-SBJ-01",
+      "stationId": "STN-SBJAIN",
+      "slotNumber": "A-01",
+      "blockNumber": 1,
+      "isOccupied": false,
+      "isReserved": false,
+      "occupiedByUserId": null,
+      "currentRfid": null,
+      "lastUpdated": "2026-10-05T08:21:26.089Z"
+    },
+    {
+      "slotId": "SLOT-SBJ-02",
+      "stationId": "STN-SBJAIN",
+      "slotNumber": "A-02",
+      "blockNumber": 2,
+      "isOccupied": false,
+      "isReserved": false,
+      "occupiedByUserId": null,
+      "currentRfid": null,
+      "lastUpdated": "2026-10-05T08:19:52.330Z"
+    },
+    {
+      "slotId": "SLOT-SBJ-03",
+      "stationId": "STN-SBJAIN",
+      "slotNumber": "A-03",
+      "blockNumber": 3,
+      "isOccupied": false,
+      "isReserved": false,
+      "occupiedByUserId": null,
+      "currentRfid": null,
+      "lastUpdated": "2026-10-05T08:00:00.000Z"
+    },
+    {
+      "slotId": "SLOT-SBJ-04",
+      "stationId": "STN-SBJAIN",
+      "slotNumber": "B-01",
+      "blockNumber": 4,
+      "isOccupied": false,
+      "isReserved": false,
+      "occupiedByUserId": null,
+      "currentRfid": null,
+      "lastUpdated": "2026-10-05T08:00:00.000Z"
+    },
+    {
+      "slotId": "SLOT-SBJ-05",
+      "stationId": "STN-SBJAIN",
+      "slotNumber": "B-02",
+      "blockNumber": 5,
+      "isOccupied": false,
+      "isReserved": false,
+      "occupiedByUserId": null,
+      "currentRfid": null,
+      "lastUpdated": "2026-10-05T08:00:00.000Z"
+    },
+    {
+      "slotId": "SLOT-SBJ-06",
+      "stationId": "STN-SBJAIN",
+      "slotNumber": "B-03",
+      "blockNumber": 6,
+      "isOccupied": false,
+      "isReserved": false,
+      "occupiedByUserId": null,
+      "currentRfid": null,
+      "lastUpdated": "2026-10-05T08:00:00.000Z"
+    },
+    {
+      "slotId": "SLOT-KTL-01",
+      "stationId": "STN-KATOLRD",
+      "slotNumber": "C-01",
+      "blockNumber": 1,
+      "isOccupied": false,
+      "isReserved": false,
+      "occupiedByUserId": null,
+      "currentRfid": null,
+      "lastUpdated": "2026-10-05T08:00:00.000Z"
+    },
+    {
+      "slotId": "SLOT-KTL-02",
+      "stationId": "STN-KATOLRD",
+      "slotNumber": "C-02",
+      "blockNumber": 2,
+      "isOccupied": false,
+      "isReserved": false,
+      "occupiedByUserId": null,
+      "currentRfid": null,
+      "lastUpdated": "2026-10-05T08:00:00.000Z"
+    },
+    {
+      "slotId": "SLOT-KTL-03",
+      "stationId": "STN-KATOLRD",
+      "slotNumber": "C-03",
+      "blockNumber": 3,
+      "isOccupied": false,
+      "isReserved": false,
+      "occupiedByUserId": null,
+      "currentRfid": null,
+      "lastUpdated": "2026-10-05T08:00:00.000Z"
+    },
+    {
+      "slotId": "SLOT-KTL-04",
+      "stationId": "STN-KATOLRD",
+      "slotNumber": "D-01",
+      "blockNumber": 4,
+      "isOccupied": false,
+      "isReserved": false,
+      "occupiedByUserId": null,
+      "currentRfid": null,
+      "lastUpdated": "2026-10-05T08:00:00.000Z"
+    },
+    {
+      "slotId": "SLOT-KTL-05",
+      "stationId": "STN-KATOLRD",
+      "slotNumber": "D-02",
+      "blockNumber": 5,
+      "isOccupied": false,
+      "isReserved": false,
+      "occupiedByUserId": null,
+      "currentRfid": null,
+      "lastUpdated": "2026-10-05T08:00:00.000Z"
+    },
+    {
+      "slotId": "SLOT-KTL-06",
+      "stationId": "STN-KATOLRD",
+      "slotNumber": "D-03",
+      "blockNumber": 6,
+      "isOccupied": false,
+      "isReserved": false,
+      "occupiedByUserId": null,
+      "currentRfid": null,
+      "lastUpdated": "2026-10-05T08:00:00.000Z"
+    },
+    {
+      "slotId": "SLOT-SIT-01",
+      "stationId": "STN-SITABULDI",
+      "slotNumber": "E-01",
+      "blockNumber": 1,
+      "isOccupied": false,
+      "isReserved": false,
+      "occupiedByUserId": null,
+      "currentRfid": null,
+      "lastUpdated": "2026-10-05T08:00:00.000Z"
+    },
+    {
+      "slotId": "SLOT-SIT-02",
+      "stationId": "STN-SITABULDI",
+      "slotNumber": "E-02",
+      "blockNumber": 2,
+      "isOccupied": false,
+      "isReserved": false,
+      "occupiedByUserId": null,
+      "currentRfid": null,
+      "lastUpdated": "2026-10-05T08:00:00.000Z"
+    },
+    {
+      "slotId": "SLOT-SIT-03",
+      "stationId": "STN-SITABULDI",
+      "slotNumber": "E-03",
+      "blockNumber": 3,
+      "isOccupied": false,
+      "isReserved": false,
+      "occupiedByUserId": null,
+      "currentRfid": null,
+      "lastUpdated": "2026-10-05T08:00:00.000Z"
+    },
+    {
+      "slotId": "SLOT-SIT-04",
+      "stationId": "STN-SITABULDI",
+      "slotNumber": "F-01",
+      "blockNumber": 4,
+      "isOccupied": false,
+      "isReserved": false,
+      "occupiedByUserId": null,
+      "currentRfid": null,
+      "lastUpdated": "2026-10-05T08:00:00.000Z"
+    },
+    {
+      "slotId": "SLOT-SIT-05",
+      "stationId": "STN-SITABULDI",
+      "slotNumber": "F-02",
+      "blockNumber": 5,
+      "isOccupied": false,
+      "isReserved": false,
+      "occupiedByUserId": null,
+      "currentRfid": null,
+      "lastUpdated": "2026-10-05T08:00:00.000Z"
+    },
+    {
+      "slotId": "SLOT-SIT-06",
+      "stationId": "STN-SITABULDI",
+      "slotNumber": "F-03",
+      "blockNumber": 6,
+      "isOccupied": false,
+      "isReserved": false,
+      "occupiedByUserId": null,
+      "currentRfid": null,
+      "lastUpdated": "2026-10-05T08:00:00.000Z"
+    }
+  ],
+  "bookings": [
+    {
+      "bookingId": "BKG-PRE-75319",
+      "userId": "USR-4290",
+      "rfidId": "83AFIA38",
+      "stationId": "STN-SBJAIN",
+      "slotId": "SLOT-SBJ-01",
+      "slotNumber": "A-01",
+      "blockNumber": 1,
+      "status": "cancelled",
+      "startTime": "2026-10-05T10:00:00.000Z",
+      "endTime": "2026-10-05T12:00:00.000Z",
+      "createdAt": "2026-10-05T08:21:15.319Z",
+      "cancelledAt": "2026-10-05T08:21:26.089Z"
+    },
+    {
+      "bookingId": "BKG-ACT-98032",
+      "userId": "USR-001",
+      "rfidId": "83A14F9B",
+      "stationId": "STN-SBJAIN",
+      "slotId": "SLOT-SBJ-01",
+      "slotNumber": "A-01",
+      "blockNumber": 1,
+      "status": "completed",
+      "startTime": "2026-10-05T08:01:38.032Z",
+      "checkInTime": "2026-10-05T08:01:38.032Z",
+      "createdAt": "2026-10-05T08:01:38.032Z",
+      "checkOutTime": "2026-10-05T08:01:38.048Z"
+    },
+    {
+      "bookingId": "BKG-DEMO-01",
+      "userId": "USR-002",
+      "rfidId": "44C27D1A",
+      "stationId": "STN-SBJAIN",
+      "slotId": "SLOT-SBJ-04",
+      "slotNumber": "B-01",
+      "status": "completed",
+      "startTime": "2026-10-04T10:00:00.000Z",
+      "endTime": "2026-10-04T12:00:00.000Z",
+      "checkInTime": "2026-10-04T10:05:12.000Z",
+      "checkOutTime": "2026-10-04T11:58:30.000Z"
+    }
+  ],
+  "systemStatus": {
+    "gateStatus": "CLOSED",
+    "barrierAngle": 0,
+    "gateOverride": false,
+    "lastAction": "CHECKOUT_SUCCESS",
+    "lastRfid": "83A14F9B",
+    "lcdData": {
+      "r1": "Smart Parking",
+      "r2": "Auto - Meta"
+    },
+    "espConnected": true,
+    "lastHardwareHeartbeat": "2026-10-05T08:00:00.000Z"
+  }
+}

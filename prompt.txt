@@ -1,0 +1,144 @@
+Create IOT+Web Application
+Act as a Full-Stack Web Developer and Embedded Systems Engineer. 
+Create a complete end-to-end solution for a project named **Smart Parking Auto-meta**.
+
+---
+
+### Project Overview & Workflow
+1. **RFID Scanning & Login:** User scans an RFID tag at an entry kiosk/terminal. The reader generates/reads a unique Tag ID. The user logs into the Web App using this Unique ID (or registers an account bound to this ID).
+2. **Smart Parking Recommendation:** 
+   - System checks real-time occupancy.
+   - Shows the nearest parking station to the user's current location.
+   - If the nearest station is full (100% capacity), automatically recommend the next nearest available parking station.
+   - Display exact available slot numbers (e.g., Slot A-02, Slot B-05).
+3. **Navigation:** Provide a direct link/button to navigate to the selected parking station via Google Maps (`https://www.google.com/maps/dir/?api=1&destination=LAT,LNG`).
+4. **Pre-Booking:** Allow users to pre-book a specific parking slot for a future time slot before arriving.
+5. **Check-In / Parking Successful:** When the vehicle enters and parks in the assigned slot, display a "Parking Successful" status.
+6. **Check-Out / Slot Release:** When the vehicle leaves (checks out), the system updates the slot status to "Available" immediately across the dashboard.
+
+---
+MOST IMPORTANT
+This Web App should be Deployable at Render
+
+Project/App Name: Parking Auto-Meta
+
+### System Architecture & Tech Stack
+
+#### 1. Hardware / Embedded (Entry Kiosk & Slot Sensors)
+- **Microcontroller:** ESP8266
+- **Sensors:** RFID Reader (RC522) D3 & D4, 
+	       Ultrasonic Sensors GPIO1 & GPIO 3
+	       IR Sensors D0 for individual slot detection.
+- **Actuators:** 16x2 LCD with I2C module @0x27 D1 & D2 (shows status, RFID ID, and assigned slot).
+- **Barrier Control:** Servo Motor (e.g., SG90 / MG996R) connected to PWM pin D8 (controls gate open/close positions)
+- **Network:** WiFi connection sending JSON payloads over HTTP POST/GET to the server.
+
+
+
+#### 2. Web Application
+add favicons also
+- **Frontend:** HTML5, Tailwind CSS, JavaScript (Responsive, Mobile-First Dashboard).
+- **Backend:** Node.js with Express.js.
+- **Database:** JSON-based storage (or SQLite/MongoDB) with tables/collections for:
+  - `Users` (RFID_ID, Name, VehicleNo, Contact)
+  - `ParkingStations` (ID, Name, Latitude, Longitude, TotalSlots)
+  - `Slots` (SlotID, StationID, SlotNumber, IsOccupied, IsReserved)
+  - `Bookings` (BookingID, UserID, SlotID, Status, StartTime, EndTime)
+
+---
+
+### Web App UI Features & Pages
+On Header Show Web App Name and Logged In User Name
+Example: Welcome Vaibhav
+
+Web App Theme:
+Use Gradient Colors.
+Theme Color: Red
+IMPORTANT: Make Sure to add Light/Dark Theme Toggle
+
+Footer Text 
+Developed & Designed by Team AKOP. Department of ETC, SB Jain, Nagpur
+
+
+### Web App UI Features & Pages
+
+- **Page 1: Login / Authentication Page**
+  - RFID Scan simulation input / Unique ID login.
+  - Registration form (Name, Email, Vehicle Number, RFID Tag ID assignment).
+
+- **Page 2: Main Dashboard**
+  - **Header:** Project Name (*Smart Parking Auto-meta*), User Profile, and Live Gate/Network Status.
+  - **Station Finder Section:** Displays nearest parking station card with distance, available slots count, and Google Maps Navigation button.
+  - **Slot Map Grid:** Visual color-coded grid representing parking slots (Green = Available, Red = Occupied, Yellow = Pre-booked).
+  - **Pre-Booking Modal:** Select Parking Station, Slot Number, Date, and Time range.
+
+- **Page 3: Live Parking Status & Controls**
+  - Displays active session ("Parked at Slot B-03 - Parking Successful").
+  - Manual Gate Open/Close Override button for remote administration.
+  - Check-out trigger that actuates the Servo Motor and releases the slot.
+  - Parking history and pre-booking table with pagination.
+
+---
+
+### Deliverables Required
+1. Complete Backend code (`server.js`) with REST API endpoints for RFID authentication, gate actuation triggers, station lookup, slot reservation, and check-in/check-out.
+2. Complete Frontend code (`index.html`, Tailwind layout, JS) with responsive UI, dynamic slot updates, and gate status indicator.
+3. ESP32/ESP8266 MicroPython or C++ code (`firmware.ino`) interfacing the **MFRC522 RFID module**, **Servo Motor barrier control**, **I2C LCD**, and **HTTP API sync**.
+
+RenderURL: Keep it blank will add after deployment
+
+Hardware Output
+LCD 16x2
+WiFi Credentials:
+WiFi Name: ESP8266
+Password: 12345678
+
+IMPORTANT
+Make it Responsive!
+
+In Setup
+R1: MyProject
+R2: WELCOME
+delay(3S)
+R1: CONNECTING TO
+R2: WiFi.........
+
+R1: CONNECTED TO
+R2: WiFi...SUCCESS
+
+In Loop
+Fetch Details from Server (LCD Data )
+Send Details to Server  
+
+R1: Welcome To
+R2: System
+R1: Smart Parking
+R2: Auto - Meta
+R1: Please Scan
+R2: Scanning.....
+R1: Scanning 
+R2: Successed !!!!
+R1: Your ID :
+R2: (Display Unique Id Generated when rfid Scanned)
+R1: Show parking block no. ( like no. 3)
+R2: You can Go...
+R1: thank You !!
+R2: For Visiting !!
+
+During Checked out : 
+R1: Welcome To
+R2: System
+R1: Smart Parking
+R2: Auto - Meta
+R1: Please Enter Id: 
+R2: Scanning.....
+R1: Scanning 
+R2: Successed !!!!
+R1: thank You !!
+R2: For Visiting !!
+
+R1 and R2 are the Rows of LCD.
+
+Generate Web App Codes and ESP8266 Code
+Don't do Automation Testing
+I will do Manual Testing

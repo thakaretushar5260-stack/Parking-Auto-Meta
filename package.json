@@ -1,0 +1,28 @@
+{
+  "name": "parking-auto-meta",
+  "version": "1.0.0",
+  "description": "Smart Parking Auto-meta IoT and Web Application",
+  "main": "server.js",
+  "scripts": {
+    "start": "node server.js",
+    "dev": "node server.js"
+  },
+  "keywords": [
+    "iot",
+    "smart-parking",
+    "esp8266",
+    "rfid",
+    "render",
+    "express"
+  ],
+  "author": "Team AKOP, Department of ETC, SB Jain, Nagpur",
+  "license": "ISC",
+  "dependencies": {
+    "cors": "^2.8.5",
+    "express": "^4.19.2",
+    "sqlite3": "^6.0.1"
+  },
+  "engines": {
+    "node": ">=18.0.0"
+  }
+}
